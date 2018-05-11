@@ -203,7 +203,7 @@ img {
   margin-right: 80px;
 }
 
-.services-item h3 {
+.services-item h2 {
   margin: 20px 0;
   text-transform: uppercase;
   font-size: 24px;
@@ -373,6 +373,8 @@ img {
 }
 
 .map {
+  width: 1440px;
+  margin: 0 auto;
   position: relative;
   margin-top: 80px;
 }
@@ -389,7 +391,7 @@ img {
   background-repeat: no-repeat;
 }
 
-.map div {
+.map-promo {
   position: absolute;
   top: 55px;
   left: 120px;
@@ -397,7 +399,7 @@ img {
   width: 320px;
 }
 
-.map h3 {
+.map h2 {
   font-size: 18px;
   line-height: 30px;
   margin: 0;
@@ -418,6 +420,124 @@ img {
   margin-bottom: 50px;
   margin-left: 50px;
   width: 220px;
+}
+
+.write-us {
+  display: none;
+  position: absolute;
+  top: -140px;
+  left: 220px;
+  width: 960px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0px 20px 50px 0px rgba(85,85,85,1);
+}
+
+.write-us h2 {
+  margin: 0;
+  padding-top: 70px;
+  margin-left: 100px;
+}
+
+.write-us form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 760px;
+  margin-left: 100px;
+}
+
+.write-us p {
+  margin: 0;
+  width: 360px;
+}
+
+.write-us p:first-of-type {
+  margin-right: 40px;
+}
+
+.write-us p:last-of-type {
+  width: 760px;
+}
+
+.write-us label {
+  display: block;
+  line-height: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 35px;
+}
+
+.write-us input {
+  width: 360px;
+  padding: 16px 0;
+  padding-left: 15px;
+  line-height: 18px;
+  border: 2px solid #d7dcde;
+  border-radius: 5px;
+}
+
+.write-us input:hover {
+  border-color: #b4b9bb;
+}
+
+.write-us input:focus {
+  border-color: #000000;
+}
+
+.invalid {
+  border-color: #e74246;
+  color: #e74246;
+}
+
+.write-us input[name="letter"] {
+  width: 760px;
+  padding-top: 10px;
+  padding-bottom: 92px;
+}
+
+.write-us input[type="submit"] {
+  border: 0;
+  line-height: 18px;
+  width: 260px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.close {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  top: 90px;
+  right: 85px;
+  border: none;
+  background-color: transparent;
+}
+
+.close::after,
+.close::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  content: "";
+  width: 21px;
+  height: 4px;
+  background-color: #fecccd;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.close::before {
+  transform:translateY(-50%) rotate(-45deg);
+}
+
+.close:hover::after,
+.close:hover::before {
+  background-color: #fb565a;
+}
+
+.close:active::after,
+.close:active::before {
+  background-color: #ffeeee;
 }
 
 .main-footer .wrapper {
