@@ -1,3 +1,143 @@
+@-webkit-keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
 html {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
@@ -29,6 +169,10 @@ img {
   display: flex;
   align-items: flex-end;
   min-height: 115px;
+}
+
+.slide-wrapper {
+  position: relative;
 }
 
 .wrapper {
@@ -127,12 +271,21 @@ img {
   padding: 0;
 }
 
-.slide-item:not(:first-child) {
+.slide-item {
+  width: 1200px;
+  display: flex;
+}
+
+.slide-2,
+.slide-3 {
   display: none;
 }
 
-.slide-item {
-  width: 1200px;
+.slide-hide {
+  display: none;
+}
+
+.slide-show {
   display: flex;
 }
 
@@ -150,6 +303,33 @@ img {
 .slide-item  p {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.slide-1 b {
+  display: block;
+  width: 380px;
+}
+
+.slide-1 p {
+  width: 365px;
+}
+
+.slide-2 b {
+  display: block;
+  width: 520px;
+}
+
+.slide-2 p {
+  width: 415px;
+}
+
+.slide-3 b {
+  display: block;
+  width: 415px;
+}
+
+.slide-3 p {
+  width: 350px;
 }
 
 .btn {
@@ -174,8 +354,39 @@ img {
   color: rgba(255,255,255,0.3);
 }
 
-.slide-item img {
-  margin-right: 20px;
+.slider-radio-wrapper {
+  position: absolute;
+  top: 320px;
+  left: 510px;
+  min-width: 90px;
+  cursor: pointer;
+}
+
+.slider-radio-wrapper label {
+  display: inline-block;
+  vertical-align: top;
+  width: 4px;
+  height: 4px;
+  border: 2px solid #ffffff;
+  margin-right: 29px;
+  box-shadow: 0px 0px 0px 5px rgba(255,255,255,1);
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-radio-wrapper label:nth-of-type(3n) {
+  margin: 0;
+}
+
+.slider-radio {
+  display: none;
+}
+
+.slider-radio:checked + label,
+.slider-radio:hover + label {
+  border: 2px solid #cccccc;
+  background: #cccccc;
 }
 
 .services-list {
@@ -187,7 +398,7 @@ img {
 
 .services-list::after,
 .promo::after,
-.customer::after {
+.customer-list::after {
   position: absolute;
   bottom: 0;
   left: 20px;
@@ -331,13 +542,13 @@ img {
 }
 
 .customer {
-  margin-left: 20px;
   position: relative;
 }
 
 .customer-list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 20px;
   width: 1160px;
 }
 
@@ -373,16 +584,19 @@ img {
 }
 
 .map {
-  width: 1440px;
-  margin: 0 auto;
-  position: relative;
   margin-top: 80px;
+  background-color: #eeeeee;
 }
 
-.map::before {
+.map .wrapper {
+  width: 1440px;
+  position: relative;
+}
+
+.map-promo::before {
   position: absolute;
-  top: 100px;
-  left: 765px;
+  top: 45px;
+  left: 700px;
   display: block;
   content: "";
   width: 231px;
@@ -433,6 +647,18 @@ img {
   box-shadow: 0px 20px 50px 0px rgba(85,85,85,1);
 }
 
+.modal-show {
+  display: block;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+.modal-error {
+  animation-name: shake;
+}
+
 .write-us h2 {
   margin: 0;
   padding-top: 70px;
@@ -467,26 +693,51 @@ img {
   margin-top: 35px;
 }
 
-.write-us input {
+.write-us-input {
   width: 360px;
   padding: 16px 0;
   padding-left: 15px;
   line-height: 18px;
   border: 2px solid #d7dcde;
   border-radius: 5px;
+  outline: none;
 }
 
-.write-us input:hover {
+.write-us-input:hover {
   border-color: #b4b9bb;
 }
 
-.write-us input:focus {
+.write-us-input:focus {
   border-color: #000000;
 }
 
 .invalid {
   border-color: #e74246;
+}
+
+::-webkit-input-placeholder {
+  color: #b4b9bb;
+}
+
+::-moz-placeholder {
+  color: #b4b9bb;
+}
+
+:-moz-placeholder {
+  color: #b4b9bb;
+}
+
+:-ms-input-placeholder {
+  color: #b4b9bb;
+}
+
+.invalid::placeholder {
   color: #e74246;
+}
+
+.invalid:hover::placeholder,
+.invalid:active::placeholder {
+  color: #b4b9bb;
 }
 
 .write-us input[name="letter"] {
@@ -496,7 +747,7 @@ img {
 }
 
 .write-us input[type="submit"] {
-  border: 0;
+  border: none;
   line-height: 18px;
   width: 260px;
   margin-top: 50px;
@@ -511,6 +762,7 @@ img {
   right: 85px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .close::after,
